@@ -1,0 +1,144 @@
+.category_wrapper {
+    padding: 0 50px;
+    margin-top: 40px;
+  
+    .top_block {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 0;
+
+        }
+      .title {
+        font-size: 24px;
+        font-weight: 700;
+        @media (max-width: 768px) {
+          padding-left: 10px;
+  
+          }
+      }
+  
+      > div {
+        @media (max-width: 768px) {
+          display: flex;
+          margin-top: 15px;
+          }
+        button.active {
+          padding: 10px 20px;
+          border-radius: 45px;
+          background-color: #ffe484;
+          font-size: 16px;
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+  
+        button {
+          font-size: 16px;
+          font-weight: 700;
+          text-transform: uppercase;
+          padding: 10px 20px;
+          border-radius: 45px;
+        }
+      }
+    }
+  
+    .card_wrapper {
+      padding: 0 10px;
+  
+      .img_w {
+        background-color: #faecd6;
+        border-radius: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+
+  height: 100%;
+  >div{
+    img {
+      width: 100%;
+      
+    }
+  }
+      }
+  
+      .c_title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+      .price{
+        font-weight: 500;
+        font-size: 20px;
+      }
+    }
+  
+    :global {
+      .slick-next,
+      .slick-prev {
+        width: fit-content;
+        height: fit-content;
+      }
+  
+      .slick-next:before,
+      .slick-prev:before {
+        content: "";
+      }
+    }
+  }
+  
+  @keyframes jump {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .customPrevArrow,
+  .customNextArrow {
+    top: 38%;
+    z-index: 2;
+    animation: jump 1s infinite;
+    animation-play-state: running;
+  }
+  
+  .customPrevArrow {
+    left: 45px; /* Подстройте по необходимости */
+    @media (max-width: 768px) {
+      left: 15px; /* Подстройте по необходимости */
+            
+          }
+  }
+  
+  .customNextArrow {
+    right: 45px; /* Подстройте по необходимости */
+    @media (max-width: 768px) {
+      right: 15px; /* Подстройте по необходимости */
+            
+          }
+  }
+  
+  .customPrevArrow:hover,
+  .customNextArrow:hover {
+    animation-play-state: paused;
+  }
+  
+
+  .colors{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    >div{
+      width: 17px;
+      height: 17px;
+      border-radius: 38px;
+      cursor: pointer;
+    }
+  }
