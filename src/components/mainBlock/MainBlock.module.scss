@@ -1,0 +1,113 @@
+.wrapper {
+    width: 100%;
+    height: 65vh;
+    border-radius: 30px;
+    background-image: url('../../../public/images/mainBackground.png');
+    background-blend-mode: darken;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 77px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 50px;
+}
+
+.mainText {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 45px;
+    text-align: left;
+    color: #F8F8F8;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 30px;
+
+    button {
+        width: 30%;
+        height: 60px;
+        padding: 19px;
+        border-radius: 47px;
+        background: #FFE484;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 21.86px;
+        text-align: center;
+        color: black;
+    }
+
+    .info {
+        display: flex;
+        gap: 80px;
+
+        .info__element {
+            display: flex;
+            flex-direction: column;
+            .title {
+                font-size: 48px;
+                font-weight: 700;
+                line-height: 65.57px;
+                text-align: left;
+                color: #FFE484;
+            }
+
+            .desc {
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 21.86px;
+                text-align: left;
+                color: #FFE484;
+            }
+        }
+    }
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 20px; /* Уменьшаем внутренние отступы */
+        height: auto; /* Высота по содержимому */
+        border-radius: 20px; /* Уменьшаем радиус скругления */
+    }
+
+    .mainText {
+        font-size: 24px; /* Уменьшаем размер шрифта */
+        line-height: 30px; /* Уменьшаем межстрочный интервал */
+        text-align: center; /* Центрируем текст */
+    }
+
+    .footer {
+        flex-direction: column; /* Меняем направление на колонку для мобильных устройств */
+        align-items: center; /* Центрируем элементы */
+        margin-top: 20px; /* Уменьшаем отступ сверху */
+
+        button {
+            width: 100%; /* Ширина кнопки на всю ширину контейнера */
+            margin-bottom: 20px; /* Отступ снизу, чтобы отделить кнопку от информации */
+            margin-top: 20px;
+        }
+
+        .info {
+            flex-direction: column; /* В столбик на мобильных */
+            gap: 20px; /* Уменьшение отступов между элементами */
+            margin-top: 20px; /* Дополнительный отступ сверху */
+
+            .info__element {
+                .title {
+                    font-size: 32px; /* Уменьшаем размер шрифта для мобильных */
+                    line-height: 45px; /* Уменьшаем межстрочный интервал */
+                }
+
+                .desc {
+                    font-size: 14px; /* Уменьшаем размер шрифта для мобильных */
+                    line-height: 20px; /* Уменьшаем межстрочный интервал */
+                }
+            }
+        }
+    }
+}

@@ -6,12 +6,14 @@ import About from './components/about/About';
 import Category from './components/category/Category';
 import Catalog from './components/catalog/Catalog';
 import Contacts from './components/contacts/Contacts';
+import MainBlock from './components/mainBlock/MainBlock';
 
 function App() {
- 
+
   return (
     <div className="App">
       <Header />
+      <MainBlock />
       <About />
       <Category />
       <Catalog />
