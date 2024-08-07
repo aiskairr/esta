@@ -39,6 +39,9 @@
     padding: 10px;
     margin-top: 5px;
     font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     justify-content: space-between;
     border-radius: 12px;
     padding: 30px 26px;
@@ -209,6 +212,9 @@
     padding: 10px;
     margin-top: 5px;
     font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     justify-content: space-between;
     border-radius: 12px;
     padding: 30px 26px;

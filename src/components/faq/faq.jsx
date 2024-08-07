@@ -16,8 +16,15 @@ const FAQ = ({ title, data, isNum }) => {
                             key={index}
                             question={item.question}
                             answer={item.answer}
+                            answer2={item.answer2}
+                            answer3={item.answer3}
+                            answer4={item.answer4}
+                            answer5={item.answer5}
+                            answer6={item.answer6}
                             index={index}
                             isNum={isNum}
+                            list={item.list}
+                            listTitle={item.listTitle}
                         />
                     ))}
                 </div>
