@@ -8,10 +8,12 @@ import Catalog from './components/catalog/Catalog';
 import Contacts from './components/contacts/Contacts';
 import MainBlock from './components/mainBlock/MainBlock';
 import FAQ from './components/faq/faq';
+import { classNames } from './components/classNames';
+import { useTheme } from './components/mode/useTheme';
 
 function App() {
 
-
+  const { theme } = useTheme()
   const faqItems1 = [
     {
       question: 'Минимальная партия?',
@@ -65,7 +67,7 @@ function App() {
   ];
 
   return (
-    <div className="App">
+    <div className={classNames('App', {}, [theme])}>
       <Header />
       <MainBlock />
       <About />

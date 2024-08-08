@@ -1,6 +1,6 @@
 .wrapper {
     width: 100%;
-    height: 65vh;
+    height: 85vh;
     border-radius: 30px;
     background-image: url('../../../public/images/mainBack.png');
     background-blend-mode: darken;
@@ -12,9 +12,18 @@
     background-size: cover;
     padding-bottom: 50px;
     margin-top: 20px;
+
+    @media (min-width: 1440px) {
+        height: 60vh;
+    }
 }
 
 .mainText {
+    display: none;
+    color: var(--color-text) !important;
+}
+
+.mainTextDesktop {
     text-transform: uppercase;
     font-size: 40px;
     font-weight: 700;
@@ -40,6 +49,10 @@
         line-height: 21.86px;
         text-align: center;
         color: black;
+
+        @media (max-width:425px) {
+            width: 100% !important;
+        }
     }
 
     .info {
@@ -49,6 +62,7 @@
         .info__element {
             display: flex;
             flex-direction: column;
+
             .title {
                 font-size: 48px;
                 font-weight: 700;
@@ -68,48 +82,82 @@
     }
 }
 
+
 /* Мобильная версия */
 @media (max-width: 768px) {
     .wrapper {
-        padding: 20px; /* Уменьшаем внутренние отступы */
-        height: auto; /* Высота по содержимому */
-        border-radius: 20px; /* Уменьшаем радиус скругления */
+        padding: 20px;
+        /* Уменьшаем внутренние отступы */
+        height: auto;
+        /* Высота по содержимому */
+        border-radius: 20px;
+        /* Уменьшаем радиус скругления */
+    }
+
+    .mainTextDesktop {
+        display: none;
     }
 
     .mainText {
-        font-size: 24px; /* Уменьшаем размер шрифта */
-        line-height: 30px; /* Уменьшаем межстрочный интервал */
-        text-align: left; /* Центрируем текст */
+        display: block;
+        width: 100%;
+        text-transform: uppercase;
+        line-height: 45px;
+        text-align: left;
+        color: black;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-size: 16px;
+        /* Уменьшаем размер шрифта */
+        line-height: 30px;
+        /* Уменьшаем межстрочный интервал */
+        text-align: left;
+        /* Центрируем текст */
     }
 
     .footer {
-        flex-direction: column; /* Меняем направление на колонку для мобильных устройств */
-        align-items: center; /* Центрируем элементы */
-        margin-top: 20px; /* Уменьшаем отступ сверху */
+        flex-direction: column;
+        /* Меняем направление на колонку для мобильных устройств */
+        align-items: center;
+        /* Центрируем элементы */
+        margin-top: 20px;
+        /* Уменьшаем отступ сверху */
         width: 100%;
+
         button {
-            width: 100%; /* Ширина кнопки на всю ширину контейнера */
-            margin-bottom: 20px; /* Отступ снизу, чтобы отделить кнопку от информации */
+            width: 40%;
+            /* Ширина кнопки на всю ширину контейнера */
+            margin-bottom: 20px;
+            /* Отступ снизу, чтобы отделить кнопку от информации */
             margin-top: 20px;
         }
 
         .info {
             width: 100%;
-            flex-direction: column; /* В столбик на мобильных */
-            gap: 20px; /* Уменьшение отступов между элементами */
-            margin-top: 20px; /* Дополнительный отступ сверху */
+            flex-direction: column;
+            align-items: center;
+            /* В столбик на мобильных */
+            gap: 20px;
+            /* Уменьшение отступов между элементами */
+            margin-top: 20px;
+            /* Дополнительный отступ сверху */
             text-align: left;
 
             .info__element {
                 text-align: left;
+
                 .title {
-                    font-size: 32px; /* Уменьшаем размер шрифта для мобильных */
-                    line-height: 45px; /* Уменьшаем межстрочный интервал */
+                    font-size: 32px;
+                    /* Уменьшаем размер шрифта для мобильных */
+                    line-height: 45px;
+                    /* Уменьшаем межстрочный интервал */
                 }
 
                 .desc {
-                    font-size: 14px; /* Уменьшаем размер шрифта для мобильных */
-                    line-height: 20px; /* Уменьшаем межстрочный интервал */
+                    font-size: 14px;
+                    /* Уменьшаем размер шрифта для мобильных */
+                    line-height: 20px;
+                    /* Уменьшаем межстрочный интервал */
                 }
             }
         }

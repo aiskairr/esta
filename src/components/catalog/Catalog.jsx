@@ -134,7 +134,7 @@ function Catalog() {
                           <div style={{backgroundColor: "red"}}></div>
                           <div style={{backgroundColor: "#FC9DC6"}}></div>
                           <div style={{backgroundColor: "#FF8800"}}></div>
-                          <div style={{backgroundColor: "#000000"}}></div>
+                          <div style={{backgroundColor: "#000000", border: "1px solid white"}}></div>
                           <div style={{backgroundColor: "#FFFFFF", border: "1px solid black"}}></div>
                         </div>
                     </div>

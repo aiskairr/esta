@@ -1,6 +1,6 @@
 .category_wrapper {
     padding: 0 50px;
-    margin-top: 40px;
+    margin-top: 70px;
   
     .top_block {
       display: flex;
@@ -34,6 +34,7 @@
           font-size: 16px;
           font-weight: 700;
           text-transform: uppercase;
+          color: black;
         }
   
         button {
@@ -42,7 +43,7 @@
           text-transform: uppercase;
           padding: 10px 20px;
           border-radius: 45px;
-color: black;
+          color: var(--color-text);
         }
       }
     }
@@ -51,7 +52,7 @@ color: black;
       padding: 0 10px;
   
       .img_w {
-        background-color: #faecd6;
+        background-color: var(--second-bg);
         border-radius: 18px;
         display: flex;
         justify-content: center;

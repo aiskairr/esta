@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Manrope:wght@200..800&display=swap');
+@import "./themes/dark.scss";
+@import "./themes/normal.scss";
+
 body {
   margin: 0;
 }
@@ -7,8 +10,9 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
-  
+
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -18,10 +22,15 @@ code {
 
 a{
   text-decoration: none;
-  color: black;
+  color: var(--color-text);
 }
 button{
   border: 0;
   background-color: transparent;
   cursor: pointer;
+}
+
+.App{
+  background-color: var(--bg-color);
+  color: var(--color-text) !important;
 }

@@ -1,66 +1,81 @@
 .About_w {
-  display: grid;
-  grid-template-columns: 1fr 40%;
-  gap: 80px;
-  margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 40%;
+    gap: 80px;
+    margin-top: 70px;
 
-  @media (max-width: 768px) {
-  grid-template-columns: 100%;
-  gap: 30px;
-    
-  }
-  .left{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    .title{
-        font-weight: 700;
-        font-size: 40px;
-        text-transform: uppercase;
-        border-bottom: 2px solid #FFE484;
-        @media (max-width: 768px) {
-            font-size: 30px;
+    @media (max-width: 768px) {
+        grid-template-columns: 100%;
+        gap: 30px;
+
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .title {
+            font-weight: 700;
+            font-size: 40px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #FFE484;
+
+            @media (max-width: 768px) {
+                font-size: 30px;
 
             }
+        }
+
+        .desc {
+            font-weight: 500;
+            color: #333333;
+        }
     }
-    .desc{
-        font-weight: 500;
-        color: #333333;
-    }
-  }
-  .right{
-    :global{
-        .slick-slide{
-            img{
-                width: 100%;
+
+    .right {
+        :global {
+            .slick-slide {
+                img {
+                    width: 100%;
+                }
+            }
+
+            .slick-dots li button:before {
+                font-size: 15px;
+                color: #FAECD6;
+            }
+
+            .slick-dots li.slick-active button:before {
+                color: #FFE484;
+            }
+
+            .slick-next:before,
+            .slick-prev:before {
+                content: "";
             }
         }
-        .slick-dots li button:before{
-            font-size: 15px;
-            color: #FAECD6;
-            
-        }
-        .slick-dots li.slick-active button:before{
-            color: #FFE484;
-        }
-        .slick-next:before, .slick-prev:before{
-            content: "";
-        }
     }
-  }
 }
+
 .customPrevArrow {
-    left: -45px; /* Подстройте по необходимости */
+    left: -45px;
+
+    /* Подстройте по необходимости */
     @media (max-width: 768px) {
-    left: -25px; /* Подстройте по необходимости */
-          
-        }
-  }
-  
-  .customNextArrow {
-    right: -45px; /* Подстройте по необходимости */
+        left: -25px;
+        /* Подстройте по необходимости */
+
+    }
+}
+
+.customNextArrow {
+    right: -45px;
+
+    /* Подстройте по необходимости */
     @media (max-width: 768px) {
-        right: -25px; /* Подстройте по необходимости */
-              
-            }
-  }
+        right: -25px;
+        /* Подстройте по необходимости */
+
+    }
+}

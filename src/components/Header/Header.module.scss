@@ -24,11 +24,19 @@
     .right{
         display: flex;
         gap: 30px;
+
+        @media (max-width: 425px) {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+      }
+
         a{
             font-weight: 700;
             font-size: 23px;
             @media (max-width: 850px) {
-                display: none;
+                // display: none;
+                font-size: 14px;
             }
         }
        button{
@@ -40,3 +48,4 @@
     }
   }
 }
+

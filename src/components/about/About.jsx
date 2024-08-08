@@ -1,29 +1,47 @@
 import React from "react";
 import Slider from "react-slick";
 import scss from "./About.module.scss";
+import { useTheme } from "../mode/useTheme";
+
 
 function CustomPrevArrow(props) {
   const { className, style, onClick } = props;
+  const { theme } = useTheme();
+
   return (
     <div
       className={`${className} ${scss.customPrevArrow}`}
       style={{ ...style, display: "block" }}
       onClick={onClick}
     >
-      <img src="/images/l_arr.svg" alt="Previous" />
+      {
+        theme == "light" ? (
+          <img src="/images/l_arr.svg" alt="Previous" />
+        ) : (
+          <img src="/images/arrowLwhite.svg" alt="Previous" />
+        )
+      }
     </div>
   );
 }
 
 function CustomNextArrow(props) {
   const { className, style, onClick } = props;
+  const { theme } = useTheme();
+  
   return (
     <div
       className={`${className} ${scss.customNextArrow}`}
       style={{ ...style, display: "block" }}
       onClick={onClick}
     >
-      <img src="/images/r_arr.svg" alt="Next" />
+      {
+        theme == "light" ? (
+          <img src="/images/r_arr.svg" alt="Next" />
+        ) : (
+          <img src="/images/arrowRwhite.svg" alt="Next" />
+        )
+      }
     </div>
   );
 }
