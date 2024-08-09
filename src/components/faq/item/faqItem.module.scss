@@ -49,7 +49,7 @@
     p {
         font-size: 16px;
         font-weight: 400;
-        line-height: 16px;
+        line-height: 26px;
         color: var(--color-text);
     }
 }
@@ -63,7 +63,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    background: #000000;
+    background: var(--question-color);
     padding: 10px;
     cursor: pointer;
     font-size: 18px;
@@ -185,7 +185,7 @@
 }
 
 .nums_inactive {
-    background: var(--faqNum);
+    background: var(--question-color);
     border-radius: 12px;
     width: 70px;
     // height: 100%;
@@ -225,7 +225,7 @@
     p {
         font-size: 16px;
         font-weight: 400;
-        line-height: 16px;
+        line-height: 26px;
         color: var(--color-text);
     }
 
