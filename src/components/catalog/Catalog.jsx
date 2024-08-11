@@ -1,5 +1,7 @@
 import Slider from "react-slick";
 import scss from "./Catalog.module.scss";
+import useHook from "../hook/useHook";
+import { useEffect, useState } from "react";
 
 function CustomPrevArrow(props) {
   const { className, style, onClick } = props;
@@ -27,50 +29,15 @@ function CustomNextArrow(props) {
   );
 }
 
-const cardArr = [
-    {
-        img: "/images/ss.png",
-        title: "Платье с цветами",
-        price: "100"
-    },
-    {
-        img: "/images/ss.png",
-        title: "Платье с цветами",
-        price: "200"
-    },
-    {
-        img: "/images/ss.png",
-        title: "Платье с цветами",
-        price: "300"
-    },
-    {
-        img: "/images/ss.png",
-        title: "Платье с цветами",
-        price: "400"
-    },
-    {
-        img: "/images/ss.png",
-        title: "Платье с цветами",
-        price: "500"
-    },
-    {
-        img: "/images/ss.png",
-        title: "Платье с цветами",
-        price: "600"
-    },
-    {
-        img: "/images/ss.png",
-        title: "Платье с цветами",
-        price: "700"
-    },
-]
-
 function Catalog() {
+  const [activeCategory, setActiveCategory] = useState('children');
+  const { getItemsWhere, items } = useHook("catalog");
+
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: items.length > 1 ? 4 : 1,
     slidesToScroll: 1,
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
@@ -78,69 +45,82 @@ function Catalog() {
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: items.length > 1 ? 3 : 1,
           slidesToScroll: 1,
         }
       },
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: items.length > 1 ? 2 : 1,
           slidesToScroll: 1,
         }
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: items.length > 1 ? 1 : 1,
           slidesToScroll: 1,
         }
       }
     ]
   };
-  const Csettings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow: <CustomPrevArrow />,
-    nextArrow: <CustomNextArrow />,
+
+  useEffect(() => {
+    getItemsWhere(activeCategory);
+  }, [activeCategory]);
+
+  const handleCategoryClick = (category) => {
+    setActiveCategory(category);
   };
+
   return (
     <div className={scss.category_wrapper}>
-        <div className={scss.top_block}>
-            <p className={scss.title}>Каталог</p>
-            <div>
-                <button className={scss.active}>детские</button>
-                <button>подростковые</button>
-            </div>
+      <div className={scss.top_block}>
+        <p className={scss.title}>Каталог</p>
+        <div>
+          <button
+            className={activeCategory === 'children' ? scss.active : ''}
+            onClick={() => handleCategoryClick('children')}
+          >
+            детские
+          </button>
+          <button
+            className={activeCategory === 'teens' ? scss.active : ''}
+            onClick={() => handleCategoryClick('teens')}
+          >
+            подростковые
+          </button>
         </div>
+      </div>
       <Slider {...settings}>
-        {
-            cardArr.map((el) => {
-                return (
-                    <div className={scss.card_wrapper}>
-                        <div className={scss.img_w}>
-                            <img src={el.img} alt="" />
-                        </div>
-                        <p className={scss.c_title}>
-                            {el.title}
-                        </p>
-                        <p className={scss.price}>
-                          {el.price} с
-                        </p>
-                        <div className={scss.colors}>
-                          <div style={{backgroundColor: "red"}}></div>
-                          <div style={{backgroundColor: "#FC9DC6"}}></div>
-                          <div style={{backgroundColor: "#FF8800"}}></div>
-                          <div style={{backgroundColor: "#000000", border: "1px solid white"}}></div>
-                          <div style={{backgroundColor: "#FFFFFF", border: "1px solid black"}}></div>
-                        </div>
-                    </div>
-                )
-            })
-        }
+        {items?.map((el) => (
+          <div className={scss.card_wrapper} key={el.images[0].url}>
+            <div className={scss.img_w}>
+              <img src={el.images[0].url} alt="" />
+              <div className={scss.size_overlay}>
+                <p className={scss.size}>Размеры:</p>
+                <div className={scss.size__cont}>
+                  {
+                    el.size.map((el) => (
+                      <p>{el}</p>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+            <p className={scss.c_title}>{el.title}</p>
+            <p className={scss.price}>{el.price} с</p>
+            <div className={scss.colors}>
+              {el.colors.map((color, index) => (
+                <div
+                  key={`${index}_${color}`}
+                  style={{ backgroundColor: color, border: "1px solid #333333" }}
+                ></div>
+              ))}
+            </div>
+          </div>
+        ))}
       </Slider>
     </div>
   );

@@ -11,7 +11,7 @@ const FAQ = ({ title, data, isNum }) => {
                     <div className={styles.line}></div>
                 </div>
                 <div className={styles.items__cont}>
-                    {data.map((item, index) => (
+                    {/* {data.map((item, index) => (
                         <FAQItem
                             key={index}
                             question={item.question}
@@ -25,6 +25,14 @@ const FAQ = ({ title, data, isNum }) => {
                             isNum={isNum}
                             list={item.list}
                             listTitle={item.listTitle}
+                        />
+                    ))} */}
+                    {data.map((item, index) => (
+                        <FAQItem
+                            key={index}
+                            index={index}
+                            isNum={isNum}
+                            {...item}
                         />
                     ))}
                 </div>

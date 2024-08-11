@@ -10,6 +10,8 @@ import MainBlock from './components/mainBlock/MainBlock';
 import FAQ from './components/faq/faq';
 import { classNames } from './components/classNames';
 import { useTheme } from './components/mode/useTheme';
+import useHook from './components/hook/useHook';
+import { useEffect } from 'react';
 
 function App() {
 
@@ -66,6 +68,14 @@ function App() {
     },
   ];
 
+  const { getItems: getNums, items: numItems } = useHook("news")
+  const { getItems: getQ, items: QItems } = useHook("products")
+
+  useEffect(() => {
+    getNums()
+    getQ();
+  }, [])
+
   return (
     <div className={classNames('App', {}, [theme])}>
       <Header />
@@ -73,8 +83,8 @@ function App() {
       <About />
       <Category />
       <Catalog />
-      <FAQ title={"ЭТАПЫ РАБОТЫ:"} data={faqItems2} isNum={true} />
-      <FAQ title={"У НАС ЧАСТО СПРАШИВАЮТ:"} data={faqItems1} />
+      <FAQ title={"ЭТАПЫ РАБОТЫ:"} data={numItems} isNum={true} />
+      <FAQ title={"У НАС ЧАСТО СПРАШИВАЮТ:"} data={QItems} />
       <Contacts />
     </div>
   );
