@@ -28,7 +28,14 @@ const useHook = (collectionName) => {
         
         const data = await getDocs(q);
         data.forEach((doc) => {
-            arr.push({ tid: doc.id, ...doc.data() });
+            const docData = doc.data();
+            
+            // Преобразование переносов строк в текстовом поле
+            if (docData.ans) {
+                docData.ans = docData.ans.replace(/\\n/g, '\n');
+            }
+            
+            arr.push({ tid: doc.id, ...docData });
         });
     
         setItems(arr.reverse());

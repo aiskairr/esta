@@ -35,7 +35,7 @@ const FAQItem = ({ question, list, listTitle, ans, answer2, answer3, answer4, an
                 <div className={styles.ansCont}>
                     <div className={isNum ? styles.answerC : styles.answer}>
                         {/* <div> */}
-                            <p>{ans}</p>
+                        <p style={{ whiteSpace: 'pre-line' }}>{ans}</p>
                             {/* <p>{answer2}</p>
                         </div>
                         <div>
