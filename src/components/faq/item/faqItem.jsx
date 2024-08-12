@@ -34,25 +34,7 @@ const FAQItem = ({ question, list, listTitle, ans, answer2, answer3, answer4, an
             {isOpen && ans &&
                 <div className={styles.ansCont}>
                     <div className={isNum ? styles.answerC : styles.answer}>
-                        {/* <div> */}
                         <p style={{ whiteSpace: 'pre-line' }}>{ans}</p>
-                            {/* <p>{answer2}</p>
-                        </div>
-                        <div>
-                            <p>{answer3}</p>
-                            <p>{answer4}</p>
-                        </div>
-                        <div>
-                            <p>{answer5}</p>
-                            <p>{answer6}</p>
-                        </div>
-
-                        <div>
-                            <p>{listTitle}</p>
-                            {list?.map((el) => (
-                                <p>{el}</p>
-                            ))}
-                        </div> */}
                     </div>
                 </div>
             }

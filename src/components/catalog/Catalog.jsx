@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import scss from "./Catalog.module.scss";
 import useHook from "../hook/useHook";
 import { useEffect, useState } from "react";
+import CatalogCard from "./CatalogCard";
 
 function CustomPrevArrow(props) {
   const { className, style, onClick } = props;
@@ -95,31 +96,7 @@ function Catalog() {
       </div>
       <Slider {...settings}>
         {items?.map((el) => (
-          <div className={scss.card_wrapper} key={el.images[0].url}>
-            <div className={scss.img_w}>
-              <img src={el.images[0].url} alt="" />
-              <div className={scss.size_overlay}>
-                <p className={scss.size}>Размеры:</p>
-                <div className={scss.size__cont}>
-                  {
-                    el.size.map((el) => (
-                      <p>{el}</p>
-                    ))
-                  }
-                </div>
-              </div>
-            </div>
-            <p className={scss.c_title}>{el.title}</p>
-            <p className={scss.price}>{el.price} с</p>
-            <div className={scss.colors}>
-              {el.colors.map((color, index) => (
-                <div
-                  key={`${index}_${color}`}
-                  style={{ backgroundColor: color, border: "1px solid #333333" }}
-                ></div>
-              ))}
-            </div>
-          </div>
+          <CatalogCard key={el.id} item={el} />
         ))}
       </Slider>
     </div>
