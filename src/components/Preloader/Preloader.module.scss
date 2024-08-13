@@ -1,0 +1,54 @@
+// src/components/Preloader/Preloader.module.scss
+.preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;;
+    background-color: #FAECD6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+  
+    .spinner {
+      display: inline-block;
+      width: 64px;
+      height: 64px;
+      position: relative;
+  
+      div {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 51px;
+        height: 51px;
+        margin: 6px;
+        border: 6px solid #3b3b3b;
+        border-radius: 50%;
+        animation: spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: #3b3b3b transparent transparent transparent;
+      }
+  
+      div:nth-child(1) {
+        animation-delay: -0.45s;
+      }
+  
+      div:nth-child(2) {
+        animation-delay: -0.3s;
+      }
+  
+      div:nth-child(3) {
+        animation-delay: -0.15s;
+      }
+    }
+  
+    @keyframes spinner {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
