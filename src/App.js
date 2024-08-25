@@ -7,6 +7,7 @@ import { useTheme } from './components/mode/useTheme';
 import useHook from './components/hook/useHook';
 import { useEffect, useState } from 'react';
 import Preloader from './components/Preloader/Preloader';
+import CallBackForm from './components/form/CallbackForm';
 
 const Header = lazy(() => import('./components/Header/Header'));
 const About = lazy(() => import('./components/about/About'));
@@ -49,6 +50,7 @@ function App() {
           <Catalog />
           <FAQ title={"ЭТАПЫ РАБОТЫ:"} data={numItems} isNum={true} />
           <FAQ title={"У НАС ЧАСТО СПРАШИВАЮТ:"} data={QItems} />
+          <CallBackForm />
           <Contacts />
         </Suspense>
       )}
