@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import styles from './CallbackForm.module.scss';
 import emailjs from 'emailjs-com';
 
-const CallBackForm = () => {
+const Modal = ({ isOpen, onClose }) => {
     const [formData, setFormData] = useState({
         name: '',
         phone: ''
     });
+
+    if (!isOpen) return null;
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,7 +18,6 @@ const CallBackForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Замените 'your_service_id', 'your_template_id', 'your_user_id' на соответствующие значения из вашей EmailJS учетной записи.
         emailjs.send('service_3hlp1ma', 'template_6j8llbg', formData, 'b1U4VKwjsVjUVlshn')
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
@@ -25,39 +27,47 @@ const CallBackForm = () => {
                 alert('Произошла ошибка при отправке сообщения.');
             });
 
-        // Очищаем форму после отправки
         setFormData({
             name: '',
             phone: ''
         });
+
+        onClose();
     };
-    return (
-        <div className={styles.formContainer}>
-            <h2>Напиши сейчас и получи выгодное предложение</h2>
-            <p>Получите профессиональную консультацию от наших менеджеров</p>
-            <form className={styles.form} onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Имя"
-                    className={styles.input}
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Номер телефона"
-                    className={styles.input}
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                />
-                <button type="submit" className={styles.button}>Отправить</button>
-            </form>
-        </div>
+
+    return ReactDOM.createPortal(
+        <div className={styles.modalOverlay}>
+            <div className={styles.modal}>
+                <button className={styles.closeButton} onClick={onClose}>
+                    &times;
+                </button>
+                <h2>Напиши сейчас и получи выгодное предложение</h2>
+                <p>Получите профессиональную консультацию от наших менеджеров</p>
+                <form className={styles.form} onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Имя"
+                        className={styles.input}
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Номер телефона"
+                        className={styles.input}
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                    />
+                    <button type="submit" className={styles.button}>Отправить</button>
+                </form>
+            </div>
+        </div>,
+        document.getElementById('modal-root') // Не забудьте добавить элемент с id "modal-root" в ваш index.html
     );
 };
 
-export default CallBackForm;
+export default Modal;

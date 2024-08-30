@@ -4,6 +4,8 @@ import scss from "./Header.module.scss"
 
 function Header() {
     const { theme } = useTheme()
+
+    console.log(theme)
     return (
         <div className={scss.header}>
             <div className={scss.header_w + " container"}>
@@ -12,16 +14,14 @@ function Header() {
                        {
                         theme == "light" ? (
                             <img src="/images/logo.svg" alt="" />
-                        ) : (
+                        ) : theme == "dark" ? (
                             <img src="/images/logo__white.png" alt="" />
+                        ) : (
+                            <img src="/images/logo.svg" alt="" />
                         )
                        }
                         <p>швейное производство детской и подростковой одежды</p>
                     </a>
-                </div>
-                <div className={scss.right}>
-                    <a href="#">детские</a>
-                    <a href="#">подростковые</a>
                 </div>
                 <ThemeSwitcher />
             </div>

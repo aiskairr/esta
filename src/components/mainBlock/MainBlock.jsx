@@ -1,6 +1,13 @@
+import Modal from "../form/CallbackForm";
 import styles from "./MainBlock.module.scss"
+import { useState } from "react";
 
 const MainBlock = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
     return (
         <div className="container">
             <div className={styles.wrapper}>
@@ -16,10 +23,11 @@ const MainBlock = () => {
                             <p className={styles.desc}>единиц в неделю</p>
                         </div>
                     </div>
-                    <button>Оформить заявку</button>
+                    <button onClick={openModal}>Оформить заявку</button>
                 </div>
             </div>
             <p className={styles.mainText}>Швейное производство полного цикла по пошиву детской и подростковой одежды оптом в Кыргызстане</p>
+            <Modal isOpen={isModalOpen} onClose={closeModal} />
         </div>
     )
 }

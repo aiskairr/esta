@@ -50,7 +50,6 @@ function App() {
           <Catalog />
           <FAQ title={"ЭТАПЫ РАБОТЫ:"} data={numItems} isNum={true} />
           <FAQ title={"У НАС ЧАСТО СПРАШИВАЮТ:"} data={QItems} />
-          <CallBackForm />
           <Contacts />
         </Suspense>
       )}
