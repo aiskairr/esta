@@ -28,7 +28,7 @@ function CustomPrevArrow(props) {
 function CustomNextArrow(props) {
   const { className, style, onClick } = props;
   const { theme } = useTheme();
-  
+
   return (
     <div
       className={`${className} ${scss.customNextArrow}`}
@@ -74,10 +74,9 @@ function About() {
       </div>
       <div className={scss.right}>
         <Slider {...settings}>
-          <div><img src="/images/image.png" alt="Product 1" /></div>
-          <div><img src="/images/image.png" alt="Product 2" /></div>
-          <div><img src="/images/image.png" alt="Product 3" /></div>
-          <div><img src="/images/image.png" alt="Product 4" /></div>
+          <div><img src="/images/5.jpg" alt="Product 1" /></div>
+          <div><img src="/images/6.jpg" alt="Product 2" /></div>
+          <div><img src="/images/7.png" alt="Product 3" /></div>
         </Slider>
       </div>
     </div>

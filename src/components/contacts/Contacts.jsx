@@ -4,9 +4,9 @@ function Contacts() {
   return (
     <div className={scss.contacts_w}>
       <div className={scss.images}>
-        <img src="/images/i1.png" alt="" />
-        <img src="/images/i2.png" alt="" />
-        <img src="/images/i3.png" alt="" />
+        <img src="/images/1.jpg" alt="" />
+        <img src="/images/2.jpg" alt="" />
+        <img src="/images/3.jpg" alt="" />
       </div>
       <div className={scss.info}>
         <div style={{borderRight: "1px solid #FFE484"}}>
@@ -23,7 +23,7 @@ function Contacts() {
         </div>
       </div>
       <div className={scss.imgg}>
-        <img src="/images/boti.png" alt="" />
+        <img src="/images/4.png" alt="" />
       </div>
     </div>
   );
