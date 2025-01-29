@@ -34,27 +34,27 @@ const cardArr = [
     title: "Футболка"
   },
   {
-    img: "/images/c_1.png",
+    img: "/images/c_2.png",
     title: "Лонгслив"
   },
   {
-    img: "/images/c_1.png",
+    img: "/images/c_3.png",
     title: "Свитшот"
   },
   {
-    img: "/images/c_1.png",
+    img: "/images/c_4.png",
     title: "Худи"
   },
   {
-    img: "/images/c_1.png",
+    img: "/images/c_5.png",
     title: "Водолазка"
   },
   {
-    img: "/images/c_1.png",
+    img: "/images/c_6.png",
     title: "Рубашка"
   },
   {
-    img: "/images/c_1.png",
+    img: "/images/c_7.png",
     title: "Блузка"
   },
 ]

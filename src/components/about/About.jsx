@@ -74,9 +74,9 @@ function About() {
       </div>
       <div className={scss.right}>
         <Slider {...settings}>
-          <div><img src="/images/5.jpg" alt="Product 1" /></div>
-          <div><img src="/images/6.jpg" alt="Product 2" /></div>
-          <div><img src="/images/7.png" alt="Product 3" /></div>
+          <div><img src="/images/5.JPG" alt="Product 1" /></div>
+          <div><img src="/images/6.JPG" alt="Product 2" /></div>
+          <div><img src="/images/7.PNG" alt="Product 3" /></div>
         </Slider>
       </div>
     </div>
